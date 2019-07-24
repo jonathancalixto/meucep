@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import Endereco from 'src/app/domain/Endereco'
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +8,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() { }
+
+  enderecos: Array<Object> = []
+
+  ionViewDidEnter() {
+    let endereco1 = new Endereco()
+    endereco1.rua = 'Rua Canbará'
+    endereco1.bairro = 'Itaquaquecetuba'
+    endereco1.cidade = 'Jardim Miray'
+    endereco1.estado = 'sp'
+    endereco1.numero = '866'
+
+    this.enderecos.push(endereco1)
+
+  }
 
 }
